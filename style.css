@@ -1,0 +1,266 @@
+/* Root Variables for Uniform Colors */
+:root {
+  --brand-primary: #0052cc;
+  --brand-secondary: #172b4d;
+  --accent-blue: #0288d1;
+  --accent-green: #689f38;
+  --accent-orange: #f57c00;
+  --gray-dark: #555;
+  --gray-muted: #6c757d;
+  --light-bg: #f9f9f9;
+  --card-shadow: rgba(0, 0, 0, 0.25);
+  --font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Body Styling */
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-bg);
+  color: var(--brand-secondary);
+  margin: 0;
+}
+
+/* HERO Section */
+.hero {
+  background-image:url('images/log1.jpg');
+  color: white;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-top: 20vh;
+}
+
+
+
+
+
+/* SERVICES SECTION */
+#modes .card {
+  position: relative;
+  min-height: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2),
+              -8px -8px 16px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Card Hover Effects */
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.25),
+              -10px -10px 30px rgba(255, 255, 255, 0.4);
+  border-color: var(green);
+  animation: slide-horizontal 1.5s infinite ease-in-out alternate;
+}
+
+/* Card Content */
+#modes .card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+#modes .card-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+#modes .small {
+  font-size: 1rem;
+  color: var(--gray-dark);
+}
+
+/* Themed Card Backgrounds */
+.sea-card {
+  background-color: #e3f2fd;
+  color: var(--accent-white);
+  border-right: 0.5rem solid var(--accent-blue);
+  border-bottom: 0.5rem solid var(--accent-blue);
+
+}
+.air-card {
+  background-color: #f1f8e9;
+  color: var(--accent-white);
+  border-left: 0.5rem solid var(--accent-blue);
+border-bottom: 0.5rem solid var(--accent-blue);
+}
+
+.land-card {
+  background-color: #fff3e0;
+  color: var(--accent-white);
+  border-right: 0.5rem solid var(--accent-blue);
+border-bottom: 0.5rem solid var(--accent-blue);
+}
+
+/* Background image overlays */
+.sea-card::before,
+.air-card::before,
+.land-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 0.41;
+}
+
+.sea-card::before {
+  background-image: url('images/ship3.jpg'), linear-gradient(45deg, #007bff, #0056b3);
+}
+
+.air-card::before {
+  background-image: url('images/plane1.jpg'), linear-gradient(45deg, #17a2b8, #0c5460);
+}
+
+.land-card::before {
+  background-image: url('images/truck2.jpg'), linear-gradient(45deg, #ffa000, #e65100);
+}
+
+/* Hover sheen */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Link Decoration */
+.card a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--brand-primary);
+  z-index: 2;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.card a:hover {
+  color: var(--brand-secondary);
+  border-bottom: 2px solid var(--brand-secondary);
+}
+
+/* Horizontal Slide Animation */
+@keyframes slide-horizontal {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(5px); }
+  100% { transform: translateX(-5px); }
+}
+
+/* Policy & Support Section */
+#policy, #support {
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  background-color:sky-blue;
+}
+
+#policy {
+  background-image: url('images/new1.jpg'), linear-gradient(45deg, #28a745, #1e7e34);
+}
+
+#support {
+  background-image: url('images/newjpg'), linear-gradient(45deg, #28a745, #1e7e34);
+}
+
+
+
+#loaderOverlay{
+  border: 16px solid white; /* Light grey */
+  border-top: 16px solid purple; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display:none;
+  flex:center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* TRACK Section Styling */
+#track {
+  background: linear-gradient(135deg, rgba(106, 27, 154, 0.85), rgba(0, 137, 123, 0.85)),
+              url('images/track-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  position: relative;
+  border-top: 8px solid var(--accent-purple);
+  border-bottom: 8px solid var(--accent-teal);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Field */
+#track input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5px);
+}
+
+#track input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Track Button */
+#track button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 20px rgba(106, 27, 154, 0.5);
+}
+
+#track button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--accent-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 137, 123, 0.6);
+}
+
+
+
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
